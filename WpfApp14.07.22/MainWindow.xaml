@@ -14,7 +14,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            
+
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -24,27 +24,28 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" Text=" " Grid.ColumnSpan="2" Background="White"/>
         <TextBlock Grid.Column="2" Grid.Row="0" Text=" " Grid.ColumnSpan="2" Background="AntiqueWhite"/>
-        <!--<Button Grid.Column="0 " Grid.Row="0 " Content=" " Grid.ColumnSpan="4" Background="Bisque" />-->
-        <Button Grid.Column="0 " Grid.Row="1 " Content="1" Background="LightBlue" />
-        <Button Grid.Column="1 " Grid.Row="1 " Content="2" Background="LightBlue" />
-        <Button Grid.Column="2 " Grid.Row="1 " Content="3" Background="LightBlue"/>
-        <Button Grid.Column="3 " Grid.Row="1 " Content="+" Background="Yellow"/>
-        <Button Grid.Column="0 " Grid.Row="2 " Content="4" Background="LightBlue"/>
-        <Button Grid.Column="1 " Grid.Row="2 " Content="5" Background="LightBlue"/>
-        <Button Grid.Column="2 " Grid.Row="2 " Content="6" Background="LightBlue"/>
-        <Button Grid.Column="3 " Grid.Row="2 " Content="-" Background="Yellow"/>
-        <Button Grid.Column="0 " Grid.Row="3 " Content="7" Background="LightBlue"/>
-        <Button Grid.Column="1 " Grid.Row="3 " Content="8" Background="LightBlue"/>
-        <Button Grid.Column="2 " Grid.Row="3 " Content="9" Background="LightBlue"/>
-        <Button Grid.Column="3 " Grid.Row="3 " Content="*" Background="Yellow"/>
-        <Button Grid.Column="0 " Grid.Row="4 " Content="0" Background="LightBlue"/>
-        <Button Grid.Column="1 " Grid.Row="4 " Content="." Background="LightBlue"/>
-        <Button Grid.Column="2 " Grid.Row="4 " Content=" =" Background="LightBlue"/>
-        <Button Grid.Column="3 " Grid.Row="4 " Content="/" Background="Yellow"/>
-        <Button Grid.Column="0 " Grid.Row="5 " Content="C" Background="AntiqueWhite"/>
-        <Button Grid.Column="1 " Grid.Row="5 " Content="CE" Background="AntiqueWhite"/>
-        <Button Grid.Column="2 " Grid.Row="5 " Content="&lt;" Background="AntiqueWhite"/>
-        <Button Grid.Column="3 " Grid.Row="5 " Content="Выключить" Background="Bisque"/>
+        <Button x:Name="btn1" Grid.Column="0 " Grid.Row="1 " Content="1" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="Button_Click_1"/>
+        <Button x:Name="btn2" Grid.Column="1 " Grid.Row="1 " Content="2" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn2_Click"/>
+        <Button x:Name="btn3" Grid.Column="2 " Grid.Row="1 " Content="3" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn3_Click"/>
+        <Button x:Name="btn_sum" Grid.Column="3 " Grid.Row="1 " Content="+" Background="Yellow" FontSize="28" FontWeight="Bold" Click="btn_sum_Click"/>
+        <Button x:Name="btn4" Grid.Column="0 " Grid.Row="2 " Content="4" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn4_Click"/>
+        <Button x:Name="btn5" Grid.Column="1 " Grid.Row="2 " Content="5" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn5_Click"/>
+        <Button x:Name="btn6" Grid.Column="2 " Grid.Row="2 " Content="6" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn6_Click"/>
+        <Button x:Name="btn_substruction" Grid.Column="3 " Grid.Row="2 " Content="-" Background="Yellow" FontSize="28" FontWeight="Bold" Click="btn_substruction_Click"/>
+        <Button x:Name="btn7" Grid.Column="0 " Grid.Row="3 " Content="7" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn7_Click"/>
+        <Button x:Name="btn8" Grid.Column="1 " Grid.Row="3 " Content="8" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn8_Click"/>
+        <Button x:Name="btn9" Grid.Column="2 " Grid.Row="3 " Content="9" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn9_Click"/>
+        <Button x:Name="btn_multiply" Grid.Column="3 " Grid.Row="3 " Content="*" Background="Yellow" FontSize="28" FontWeight="Bold" Click="btn_multiply_Click"/>
+        <Button x:Name="btn0" Grid.Column="0 " Grid.Row="4 " Content="0" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn0_Click"/>
+        <Button x:Name="btn_" Grid.Column="1 " Grid.Row="4 " Content="." Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn__Click"/>
+        <Button x:Name="btn_result" Grid.Column="2 " Grid.Row="4 " Content=" =" Background="LightBlue" FontSize="28" FontWeight="Bold" Click="btn_result_Click"/>
+        <Button x:Name="btn_division" Grid.Column="3 " Grid.Row="4 " Content="/" Background="Yellow" FontSize="28" FontWeight="Bold" Click="btn_division_Click"/>
+        <Button x:Name="btnC" Grid.Column="0 " Grid.Row="5 " Content="C" Background="AntiqueWhite" FontSize="28" FontWeight="Bold" Click="btnC_Click"/>
+        <Button x:Name="btnCE" Grid.Column="1 " Grid.Row="5 " Content="CE" Background="AntiqueWhite" FontSize="28" FontWeight="Bold" Click="btnCE_Click"/>
+        <Button x:Name="btn_RemoveLast" Grid.Column="2 " Grid.Row="5 " Content="&lt;" Background="AntiqueWhite" FontSize="28" FontWeight="Bold" Click="btn_RemoveLast_Click"/>
+        <Button x:Name="btnExit" Grid.Column="3 " Grid.Row="5 " Content="Выключить" Background="Bisque" FontSize="28" FontWeight="Bold" BorderBrush="#FFBFFF00" Click="btnExit_Click"/>
+        <TextBox x:Name="txtEnter" HorizontalAlignment="Center" Margin="42,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" Grid.ColumnSpan="2" Height="57" IsEnabled="False" FontSize="48"/>
+        <TextBox x:Name="txtResult" Grid.Column="2" HorizontalAlignment="Left" Margin="59,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="311" Height="57" Grid.ColumnSpan="2" FontSize="48" FontWeight="Bold"/>
 
     </Grid>
 </Window>
