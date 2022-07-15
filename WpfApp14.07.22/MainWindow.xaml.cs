@@ -102,6 +102,7 @@ namespace WpfApp14._07._22
             multiply = false;
             division = false;
             txtEnter.Text = null;
+            txtResult.Text +=result+ btn_sum.Content.ToString();
         }
 
         private void btn_result_Click(object sender, RoutedEventArgs e)
@@ -142,6 +143,7 @@ namespace WpfApp14._07._22
             multiply = false;
             division = false;
             txtEnter.Text = null;
+            txtResult.Text +=result+ btn_substruction.Content.ToString();
         }
 
         private void btn_multiply_Click(object sender, RoutedEventArgs e)
@@ -152,6 +154,7 @@ namespace WpfApp14._07._22
             multiply = true;
             division = false;
             txtEnter.Text = null;
+            txtResult.Text +=result+ btn_multiply.Content.ToString();
         }
 
         private void btn_division_Click(object sender, RoutedEventArgs e)
@@ -162,6 +165,7 @@ namespace WpfApp14._07._22
             multiply = false;
             division = true;
             txtEnter.Text = null;
+            txtResult.Text +=result+ btn_division.Content.ToString();
         }
 
         private void btnCE_Click(object sender, RoutedEventArgs e)
@@ -261,6 +265,18 @@ namespace WpfApp14._07._22
         {
             if (txtEnter.Text.Length != 0)
                 txtEnter.Text = txtEnter.Text.Remove(txtEnter.Text.Length - 1);
+        }
+
+        private void txtEnter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtResult.Text.StartsWith("0,"))
+                txtResult.Text = txtEnter.Text;
+            if (txtResult.Text.StartsWith("0"))
+            {
+                txtResult.Text = txtResult.Text.TrimStart('0');
+            }
+            else
+                txtResult.Text = txtEnter.Text;
         }
     }
 }
