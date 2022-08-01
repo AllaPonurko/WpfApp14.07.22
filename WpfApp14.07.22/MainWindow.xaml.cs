@@ -23,19 +23,67 @@ namespace WpfApp14._07._22
         public MainWindow()
         {
             InitializeComponent();
-            //Button btnMain = new Button();
-            //btnMain.Width = 200;
-            //btnMain.Height = 80;
-            //btnMain.Content = "Кнопка";
-            //layoutGrid.Children.Add(btnMain);
-
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             
+            CommandBinding commandBinding1 = new CommandBinding();
+            commandBinding1.Command = WindowCommands.PerformanceSumm;
+            commandBinding1.Executed += PerformanceSumm_Executed;
+            btn_sum.CommandBindings.Add(commandBinding1);
+            CommandBinding commandBinding2 = new CommandBinding();
+            btn_substruction.CommandBindings.Add(commandBinding2);
+            commandBinding2.Command = WindowCommands.PerformanceSubstruction;
+            commandBinding2.Executed += PerformanceSubstruction_Executed;
+            btn_substruction.CommandBindings.Add(commandBinding2);
+            CommandBinding commandBinding3 = new CommandBinding();
+            commandBinding3.Command = WindowCommands.PerformanceMultiply;
+            commandBinding3.Executed += PerformanceMultiply_Executed;
+            btn_multiply.CommandBindings.Add(commandBinding3);
+            CommandBinding commandBinding4 = new CommandBinding();
+            commandBinding4.Command = WindowCommands.PerformanceDivision;
+            commandBinding4.Executed += PerformanceDivision_Executed;
+            btn_division.CommandBindings.Add(commandBinding4);
         }
 
         
+        private void PerformanceSumm_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            result = Convert.ToDouble(txtEnter.Text);
+            summ = true;
+            subtraction = false;
+            multiply = false;
+            division = false;
+            txtEnter.Text = null;
+            txtResult.Text += result + btn_sum.Content.ToString();
+        }
+        private void PerformanceSubstruction_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            result = Convert.ToDouble(txtEnter.Text);
+            summ = false;
+            subtraction = true;
+            multiply = false;
+            division = false;
+            txtEnter.Text = null;
+            txtResult.Text += result + btn_substruction.Content.ToString();
+        }
+        private void PerformanceMultiply_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            result = Convert.ToDouble(txtEnter.Text);
+            summ = false;
+            subtraction = false;
+            multiply = true;
+            division = false;
+            txtEnter.Text = null;
+            txtResult.Text += result + btn_multiply.Content.ToString();
+        }
+        private void PerformanceDivision_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            result = Convert.ToDouble(txtEnter.Text);
+            summ = false;
+            subtraction = false;
+            multiply = false;
+            division = true;
+            txtEnter.Text = null;
+            txtResult.Text +=result+ btn_division.Content.ToString();
+        }
 
         private void btn2_Click(object sender, RoutedEventArgs e)
         {if(txtEnter.Text.StartsWith("0"))
@@ -96,38 +144,38 @@ namespace WpfApp14._07._22
         double result=0;
         private void btn_sum_Click(object sender, RoutedEventArgs e)
         {
-            result = Convert.ToDouble(txtEnter.Text);
-            summ = true;
-            subtraction = false;
-            multiply = false;
-            division = false;
-            txtEnter.Text = null;
-            txtResult.Text +=result+ btn_sum.Content.ToString();
+            //result = Convert.ToDouble(txtEnter.Text);
+            //summ = true;
+            //subtraction = false;
+            //multiply = false;
+            //division = false;
+            //txtEnter.Text = null;
+            //txtResult.Text +=result+ btn_sum.Content.ToString();
         }
 
         private void btn_result_Click(object sender, RoutedEventArgs e)
         {
-            if (summ == true) 
+            if (summ) 
             { 
                 result += Convert.ToDouble(txtEnter.Text);
                 txtResult.Text = result.ToString();
             }
-            if (subtraction == true)
+            if (subtraction)
             {
                 result -= Convert.ToDouble(txtEnter.Text);
                 txtResult.Text = result.ToString();
             }
-            if (multiply == true)
+            if (multiply )
             {
                 result *= Convert.ToDouble(txtEnter.Text);
                 txtResult.Text = result.ToString();
             }
-            if (division == true && Convert.ToDouble(txtEnter.Text) == 0)
+            if (division && Convert.ToDouble(txtEnter.Text) == 0)
             { 
                 MessageBox.Show("Ошибка! Деление на ноль!!!");
                 txtResult.Text = "Error";
             }
-            if (division == true && Convert.ToDouble(txtEnter.Text) != 0)
+            if (division && Convert.ToDouble(txtEnter.Text) != 0)
             { 
                 result /= Convert.ToDouble(txtEnter.Text);
                 txtResult.Text = result.ToString();
@@ -137,35 +185,35 @@ namespace WpfApp14._07._22
 
         private void btn_substruction_Click(object sender, RoutedEventArgs e)
         {
-            result = Convert.ToDouble(txtEnter.Text);
-            summ = false;
-            subtraction = true;
-            multiply = false;
-            division = false;
-            txtEnter.Text = null;
-            txtResult.Text +=result+ btn_substruction.Content.ToString();
+            //result = Convert.ToDouble(txtEnter.Text);
+            //summ = false;
+            //subtraction = true;
+            //multiply = false;
+            //division = false;
+            //txtEnter.Text = null;
+            //txtResult.Text +=result+ btn_substruction.Content.ToString();
         }
 
         private void btn_multiply_Click(object sender, RoutedEventArgs e)
         {
-            result = Convert.ToDouble(txtEnter.Text);
-            summ = false;
-            subtraction = false;
-            multiply = true;
-            division = false;
-            txtEnter.Text = null;
-            txtResult.Text +=result+ btn_multiply.Content.ToString();
+            //result = Convert.ToDouble(txtEnter.Text);
+            //summ = false;
+            //subtraction = false;
+            //multiply = true;
+            //division = false;
+            //txtEnter.Text = null;
+            //txtResult.Text +=result+ btn_multiply.Content.ToString();
         }
 
         private void btn_division_Click(object sender, RoutedEventArgs e)
         {
-            result = Convert.ToDouble(txtEnter.Text);
-            summ = false;
-            subtraction = false;
-            multiply = false;
-            division = true;
-            txtEnter.Text = null;
-            txtResult.Text +=result+ btn_division.Content.ToString();
+            //result = Convert.ToDouble(txtEnter.Text);
+            //summ = false;
+            //subtraction = false;
+            //multiply = false;
+            //division = true;
+            //txtEnter.Text = null;
+            //txtResult.Text +=result+ btn_division.Content.ToString();
         }
 
         private void btnCE_Click(object sender, RoutedEventArgs e)
